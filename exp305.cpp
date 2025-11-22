@@ -2,12 +2,24 @@
 using namespace std;
 int main()
 {
-	double a,b,c,min;
+	double a,b,c,temp;
 	cout<<"input a,b,c:"<<endl;
 	cin>>a>>b>>c;
-	if(a<=b&&a<=c)min=a;
-	if(b<=a&&b<=c)min=b;
-	if(c<=a&&c<=b)min=c;
-	cout<<"The result is"<<min<<endl;
+	if(a>b){
+		temp =a;
+		a=b;
+		b=temp;
+	}
+	if(a>c){
+		temp =a;
+		a=c;
+		c=temp;
+	}
+	if(b>c){
+		temp =b;
+		b=c;
+		c=temp;
+	}
+	cout<<"从小到大排序："<<a<<""<<b<<""<<c<<endl;
 	return 0; 
 }
