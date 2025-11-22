@@ -1,9 +1,10 @@
 #include<iostream>
-#include <locale.h> 
+#include <windows.h> 
 using namespace std;
 int main()
 {
-	setlocale(LC_ALL, "zh-CN.UTF-8"); 
+	SetConsoleOutputCP(65001);
+	SetConsoleCP(65001); 
 	double a,b,c,temp;
 	cout<<"input a,b,c:"<<endl;
 	cin>>a>>b>>c;
