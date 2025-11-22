@@ -6,10 +6,10 @@ int main()
 	cout <<"n=";cin>>n;
 	switch(n)
 	{
-		case 1:cout<<"One\n";
-		case 2:cout<<"Two\n";
-		case 3:cout<<"Three\n";
-		default : cout <<"Pass\n"; 
+		case 1:cout<<"One\n";break;
+		case 2:cout<<"Two\n";break;
+		case 3:cout<<"Three\n";break;
+		default : cout <<"Pass\n"; break;
 	}
   return 0; 
 }
