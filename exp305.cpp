@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-	int a,b,c,min;
+	double a,b,c,min;
 	cout<<"input a,b,c:"<<endl;
 	cin>>a>>b>>c;
 	if(a<=b&&a<=c)min=a;
