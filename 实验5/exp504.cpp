@@ -15,21 +15,22 @@
    cout<<endl;
    return 0;
  }
- void select_sort(int array[],int n)//形参array是数组名//不会啊啊啊啊啊啊啊啊啊
+ void select_sort(int array[],int n)//形参array是数组名//冒泡排序
  {
-  int i, j, min_idx, temp;
-    // 外层循环：遍历待排序区间的起始位置
-    for (i = 0; i < n - 1; i++) {
-        min_idx = i; // 假设当前起始位置是最小值的下标
-        // 内层循环：找剩余区间的最小值下标
-        for (j = i + 1; j < n; j++) {
-            if (array[j] < array[min_idx]) {
-                min_idx = j;
-            }
-        }
-        // 交换当前起始位置和最小值的位置
-        temp = array[i];
-        array[i] = array[min_idx];
-        array[min_idx] = temp;
-    }           //排序
- }
+  int i,j;
+  for(i=0;i<n-1;i++)//遍历所有数
+  {
+    for(j=0;j<n-i-1;j++)
+    {
+      //如果前一个数大于后一个数，则交换两数
+      if(array[j]>array[j+1])
+      {
+        int temp;
+        temp = array[j];
+        array[j] = array[j+1];
+        array[j+1] = temp;
+      }
+    }
+  }
+}
+
