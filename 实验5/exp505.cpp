@@ -1,25 +1,44 @@
-1 #include <iostream>
- 2          //包含能够处理字符串的函数的头文件
- 3 using namespace std;
- 4 int main()
- 5 {
- 6   void smallest_string(char str[][30],int i);//函数声明
- 7   int i;
- 8   char country_name[3][30];//定义二维字符数组
- 9   for(i=0; i<3; i++)
-10                 //输入3个国家名
-11                 ;//调用smallest_string函数
-12   return 0;
-13 }
-14 
-15 void smallest_string(char str[][30],int n)
-16 {
-17   int i;
-18           ; //声明一个具有30个字符型元素的数组
-19   strcpy(string,str[0]);//使string的值为str[0]的值
-20   for(i=0; i<n; i++)
-21     if(strcmp(str[i],string)<0)//如果str[i]<string
-22       strcpy(string,str[i]);//将str[i]中的字符串复制到string
-23   cout<<endl<<"the smallest string is:"<<string<<endl;
-24 //输出"最小"的字符串
-25 }
+#include <iostream>
+#include <cstdlib>//包含rand函数的头文件
+#include <ctime>//包含time函数的头文件
+#include <iomanip>//用于 setw函数
+using namespace std;
+int main()
+{
+    //1.设置随机种子：用当前时间作为随机数种子
+    srand((unsigned int)time(NULL));
+    //2.生成10个随机数并输出
+    int a[10];
+    for(int i=0;i<10;i++)
+    {
+        a[i]=rand()%100;//rand函数生成0~99之间的随机数
+    }
+    //升序排序冒泡
+//1.外层一共循环九轮
+for(int i=0;i<10-1;i++)
+{//2.内层每次循环次数依次减少
+    for(int j=0;j<10-1-1;j++)
+    {
+        if(a[j]>a[j+1])
+        //交换两个数
+        {
+            int temp;
+            temp=a[j];
+            a[j]=a[j+1];
+            a[j+1]=temp;
+        }
+    }
+}
+
+//3.输出排好序的数组元素，每行五个，每个占8列宽度
+for(int i=0;i<10;i++)//不写i=1是因为这样只会访问a[1]~a[10],没有访问a[0]
+{
+    cout<<setw(8)<<a[i];
+    if((i+1)%5==0)//不能用i%5==0,因为
+    {
+        cout<<endl;
+    }
+    
+}
+return 0;
+}

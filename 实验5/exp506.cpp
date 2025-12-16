@@ -1,19 +1,25 @@
-#include <iostream>
-          //包含string类的头文件
-  using namespace std;
-  int main()
-  {
-    string string1,string2,string3,temp;
-    cout<<"please input three strings:";//这是对用户输入的提示
-    cin>>string1>>string2>>string3;//输入3个字符串
-    if(string2>string3) {
-              //使串2≤串3
-    
-   }
-   if(string1<=string2) cout<<string1<<" "<<string2<<" "<<string3<<endl;
- //如果串1≤串2,则串1≤串2≤串3
-   else if(string1<=string3) cout<<string2<<" "<<string1<<" "<<string3<<endl;
- //如果串1＞串2,且串1≤串3,则串2＜串1≤串3
-   else cout<<string2<<" "<<string3<<" "<<string1<<endl;
-//如果串1＞串2,且串1＞串3,则串2＜串3＜串1
- }
+1 #include <iostream>
+ 2          //包含能够处理字符串的函数的头文件
+ 3 using namespace std;
+ 4 int main()
+ 5 {
+ 6   void smallest_string(char str[][30],int i);//函数声明
+ 7   int i;
+ 8   char country_name[3][30];//定义二维字符数组
+ 9   for(i=0; i<3; i++)
+10                 //输入3个国家名
+11                 ;//调用smallest_string函数
+12   return 0;
+13 }
+14 
+15 void smallest_string(char str[][30],int n)
+16 {
+17   int i;
+18           ; //声明一个具有30个字符型元素的数组
+19   strcpy(string,str[0]);//使string的值为str[0]的值
+20   for(i=0; i<n; i++)
+21     if(strcmp(str[i],string)<0)//如果str[i]<string
+22       strcpy(string,str[i]);//将str[i]中的字符串复制到string
+23   cout<<endl<<"the smallest string is:"<<string<<endl;
+24 //输出"最小"的字符串
+25 }
