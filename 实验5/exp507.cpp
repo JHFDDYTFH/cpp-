@@ -1,5 +1,5 @@
 #include <iostream>
-          //包含string类的头文件
+#include <cstring>         //包含string类的头文件
   using namespace std;
   int main()
   {
@@ -7,7 +7,11 @@
     cout<<"please input three strings:";//这是对用户输入的提示
     cin>>string1>>string2>>string3;//输入3个字符串
     if(string2>string3) {
-              //使串2≤串3
+     temp=string2;
+     string2=string3;
+     string3=temp;
+
+    //使串2≤串3,交换串2串3
     
    }
    if(string1<=string2) cout<<string1<<" "<<string2<<" "<<string3<<endl;
