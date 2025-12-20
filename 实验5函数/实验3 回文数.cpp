@@ -13,7 +13,7 @@ int main( )
 		cout<<" input error(<=0)"<<endl;		
 		return -1;
 	}
-	flag =        ①      ; //函数调用  	
+	flag = isPalind(data)       ; //函数调用  	
 	if(flag)
 		cout<< data << " is a palindrome"<<endl ;
 	else
@@ -23,10 +23,23 @@ int main( )
 //n：正整数，用于求反向倒置数
 long reverse(long n)
 {
-②//请完成这部分内容
+int digit;long newnumber=0;
+while(n!=0){
+	digit=n%10;
+	newnumber=newnumber*10+digit;
+    n=n/10;
+}
+return newnumber;
 }
 //n：正整数，用于判断是否是回文数
 bool isPalind(long n)
 {
-	③//请完成这部分内容
+	long flag;
+	flag=reverse(n);
+	if(n==flag){
+	return true;}
+	else{
+	return false;}
+	
 }
+	
