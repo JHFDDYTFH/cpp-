@@ -5,12 +5,16 @@ using namespace std;
 bool isPrime(int n); //函数声明
 int main( )
 {
-	int i, count=0,flag;
+	int i, count=0;
 	for( i=2; i<=1000; i++ )
 	{
 	   if(isPrime(i))
 	   {
+		cout<<setw(4)<<i;
 		count++;
+		if(count%8==0){
+			cout<<endl;
+		}
 	   }
 	}
 	cout<<"\n The count is "<< count <<endl;	
@@ -19,21 +23,24 @@ int main( )
 //n：正整数，用于判断是否是素数
 //返回：真表示是素数；假表示不是素数
 bool isPrime(int n)
-{
-	int k,i;
-	for(n=1;n<=1000;n=n+2)
+{   if(n==2)
 	{
-		k=int(sqrt(n));
-		for(i=2;i<=k;i++)
+		return true;
+	}
+	   
+	if(n%2==0)
+	{
+      return false;
+	}
+	int sqrtN=sqrt(n);
+	for(int i=3;i<=sqrtN;i+=2)
+	{
+		if(n%i==0)
 		{
-			if(n%i==0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return false;
 		}
 	}
+	return true;
 }
+	
+			
