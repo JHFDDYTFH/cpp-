@@ -1,8 +1,11 @@
 #include <iostream>
+#include<windows.h>
 using namespace std;
 int sum(int , bool); //函数声明
 int main( )
 {
+	SetConsoleOutputCP(65001);
+	SetConsoleCP(65001); 
 	int data, m , n;
 	cout<<"input a data: ";
 	cin>>data;  //输入一个正整数
@@ -15,7 +18,7 @@ if(m > n) {
 	cout<<"奇数之和>偶数之和,差值为:"<<d<<endl;   //输出
 } else {
 	int d2 = n - m;
-	cout<<"偶数之和>奇数之和.差值为:"<<d2<<endl; //输出
+	cout<<"偶数之和>奇数之和,差值为:"<<d2<<endl; //输出
 }
 	return 0;
 }
