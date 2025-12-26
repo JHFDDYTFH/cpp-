@@ -28,7 +28,11 @@ int main()
     }
     }for(int k=0;k<count;k++)
     {
-       cout<<b[k] ;
+       cout<<b[k];
     }
+    cout<<endl;
+    int p= count;
+        cout<<"the length is: "<<p<<endl;
+    
 return 0;
 }
