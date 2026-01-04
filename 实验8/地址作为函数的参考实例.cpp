@@ -1,14 +1,12 @@
 #include<iostream>
 #include<windows.h>
 using namespace std;
-int swap(int *p1,int *p2)
+void swap(int *p1,int *p2)
 {
-    int t;
-    t=*p1;
-    *p1=*p2;
-    *p2=t;
-
-    return 0;
+    int *t;
+    t=p1;
+    p1=p2;
+    p2=t;
 }
 
 int main()
