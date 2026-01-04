@@ -1,12 +1,17 @@
-#include<stdio.h>
+#include<iostream>
+#include<windows.h>
 #include<string.h>
+using namespace std;
 int main( )
 {
+     SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+
 	char *str,*p,a[100],b[100],*t;
 	str=a;p=b;
-	printf("请输入你的字符串：");
+	std::cout << "请输入你的字符串：";
 		gets(str);
-	printf("请输入你要减去的字符：");
+	std::cout << "请输入你要减去的字符：";
 	gets(p);
 	for(;*str!='\0';str++)
 		for(p=b;*p!='\0';p++)
@@ -20,7 +25,7 @@ int main( )
 			}
 		}
 		str=a;//
-		printf("最后的字符串是：");
-		printf("%s\n",str);
+		std::cout << "最后的字符串是：";
+		std::cout << str << std::endl;
     return 0;
 }
