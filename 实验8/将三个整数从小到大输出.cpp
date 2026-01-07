@@ -1,5 +1,5 @@
 #include<iostream>
-#
+
 using namespace std;
 void swap(int*arr,int len)
 {
