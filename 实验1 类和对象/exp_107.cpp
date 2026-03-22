@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <cmath>
 using namespace std;
+class point;
 
 class Distance
 {
@@ -17,10 +18,10 @@ class point
     public:
     point(double a=0,double b=0)
     {
-        this->x=x;
-        this->y=y;
+        this->x=a;
+        this->y=b;
     }
-    double p1,p2;
+    
     friend class Distance;
 };
 
@@ -37,9 +38,15 @@ int main()
 {
     SetConsoleOutputCP(65001);
     SetConsoleCP(65001);
-    point p1(1,2),p2(3,4);
+    double x1,y1,x2,y2;
+    cout<<"请输入第一个点的坐标："<<endl;
+    cin>>x1>>y1;
+    cout<<"请输入第二个点的坐标："<<endl;
+    cin>>x2>>y2;
+    point p1(x1,y1),p2(x2,y2);
     Distance d;
-    cout<<"Distance between p1 and p2 is "<<d.getDistance(p1,p2)<<endl;
+    cout<<fixed;
+    cout.precision(2);
+    cout<<"两点之间的距离为："<<d.getDistance(p1,p2)<<endl;
     return 0;
-
 }
