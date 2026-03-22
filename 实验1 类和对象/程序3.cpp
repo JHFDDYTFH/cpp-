@@ -7,11 +7,13 @@ class girl
 	char *name;
     int age;
   public:
+  friend void disp(girl&g);
 	girl(char *na,int n)
 	{ name=new char[strlen(na)+1];
 	  strcpy(name,na);
 	  age=n;
 	}
+	  
 	~girl(void)    
 	{delete[] name;}  //释放new分配的内存
 	const char *get_name(void) const
@@ -19,15 +21,16 @@ class girl
 	int get_age(void)const
 	{return age;}
 	void print_girl(void);
+	
 };
 void girl::print_girl(void)
 { cout<<"姓名:"<<name;
   cout<<"  年龄:"<<age<<endl;
 }
-void disp(const girl &g)   
+void disp( girl &g)   
 
-{ cout<<"姓名:"<<g.get_name();
-  cout<<"  年龄:"<<g.get_age()<<endl;
+{ cout<<"姓名:"<<g.name;
+  cout<<"  年龄:"<<g.age<<endl;
 }
 int main(void)
 { SetConsoleOutputCP(65001);
